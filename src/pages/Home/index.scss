@@ -25,9 +25,8 @@
 }
 
 .titleText {
+  @extend %h1-reg;
   text-align: left;
-  font-size: 34px;
-  line-height: 44px;
   font-weight: 600;
   color: $primary
 }

@@ -1,3 +1,5 @@
+@import "src/styles/breakpoints.scss";
+
 html {
   font-size: max(16px, 1vw);
 }
@@ -9,6 +11,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media #{$mq-xs} {
+    margin: 0 $margin-sm 0;
+  }
+  @media #{$mq-lg} {
+    margin: 0 $margin-lg 0;
+  }
+  @media #{$mq-xl} {
+    max-width: 70%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+  }
 }
 
 code {
