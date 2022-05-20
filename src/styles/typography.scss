@@ -22,7 +22,7 @@ $font-family: Neue Montreal, Arial, sans-serif;
 
 %h1-reg {
   @include font-style(2.125rem, 2.75rem);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 %h1-big {
@@ -30,16 +30,11 @@ $font-family: Neue Montreal, Arial, sans-serif;
   letter-spacing: -0.02em;
 }
 
-%body-req {
-  @include font-style(1.125rem, 1.75rem);
+%body {
+  @include font-style(1.5rem, 2rem);
   letter-spacing: 0.01em;
 }
 
-%body-reg-big {
-  @include font-style(1.25rem, 1.75rem);
-}
-
-%body-large {
-  @include font-style(1.5rem, 2.125rem);
-  letter-spacing: -0.01em;
+%caption {
+  @include font-style(.875rem, 1.5rem);
 }

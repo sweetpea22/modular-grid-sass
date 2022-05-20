@@ -33,6 +33,17 @@ export const Home: React.FC = () => {
           </div>
         </main>
       </section>
+      <section className='contentWrapper'>
+        <div className='textWrapper'>
+          <img src='/graphic.png' alt=""/>
+          <div className='featuredText'>
+            <p>A proud cornerstone of the ecosystem.</p>
+            <div className='statsWrapper'>
+              <p><div className='highlightText'>250,000+</div> weekly downloads.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
