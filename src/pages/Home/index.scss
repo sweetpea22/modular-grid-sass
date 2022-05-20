@@ -30,3 +30,34 @@
   font-weight: 600;
   color: $primary
 }
+
+.featureWrapper {
+  @media #{$mq-sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  display: grid;
+  // margin-top: 1.5rem;
+  grid-template-columns: minmax(100%, 1fr);
+  align-content: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 1rem 1rem 0;
+
+  span { 
+    content: '';
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    background: $primary;
+    border-radius: 4px;
+    margin-right: 1rem;
+  }
+
+  p {
+    color: $gray-900;
+  }
+}
