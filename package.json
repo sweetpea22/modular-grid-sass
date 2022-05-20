@@ -25,7 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sys:prepare-ipfs-mode": "cp package.json package.temp.json && cat package.json | python3 -c 'import json, sys; v = json.load(sys.stdin); v[\"homepage\"] = \".\"; json.dump(v, sys.stdout, indent=2)' | tee package.json > /dev/null",
+    "sys:cleanup-ipfs-mode": "mv -f package.temp.json package.json",
+    "build-ipfs": "yarn sys:prepare-ipfs-mode && REACT_APP_IPFS_MODE=true yarn build && yarn sys:cleanup-ipfs-mode",
+    "pinata:ipfs-publish": "yarn build-ipfs && node scripts/publish.js"
   },
   "eslintConfig": {
     "extends": [
