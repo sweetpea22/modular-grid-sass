@@ -1,0 +1,33 @@
+@import "src/styles/breakpoints.scss";
+@import "src/styles/colors.scss";
+@import "src/styles/typography.scss";
+
+.container {
+  @media #{$mq-md} {
+    margin-top: 2rem;
+    flex-direction: row;
+  }
+  flex-direction: column;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentWrapper {
+  @media #{$mq-sm} {
+    padding: 0 2rem;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%
+}
+
+.titleText {
+  text-align: left;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 600;
+  color: $primary
+}

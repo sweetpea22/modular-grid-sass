@@ -1,11 +1,23 @@
+// global css vars 
 :root {
-  --primary-color-hue: 56;
+  --primary-color-hue: 12;
   --primary-color-saturation: 100%;
 
   --gray-color-hue: 0;
   --gray-color-saturation: 0%;
 }
 
-a {
-  color: hsl(56, 100%, 64%)
-}
+// sass variables 
+
+$primary: hsl(var(--primary-color-hue), var(--primary-color-saturation), 70%);
+
+
+$gray-100: hsl(var(--gray-color-hue), var(--gray-color-saturation), 96%); //#F5F5F5
+
+$gray-300: hsl(var(--gray-color-hue), var(--gray-color-saturation), 75%);
+
+$gray-800: hsl(var(--gray-color-hue), var(--gray-color-saturation), 55%);
+
+$gray-900: hsl(var(--gray-color-hue), var(--gray-color-saturation), 35%);
+
+$black: hsl(var(--gray-color-hue), var(--gray-color-saturation), 0%);
