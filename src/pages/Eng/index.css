@@ -1,0 +1,28 @@
+:root {
+  --primary-color-hue: 12;
+  --primary-color-saturation: 100%;
+  --gray-color-hue: 0;
+  --gray-color-saturation: 0%;
+}
+
+@font-face {
+  font-family: Neue Montreal;
+  src: url("../assets/fonts/NeueMontreal-Regular.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Bold.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-BoldItalic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Italic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Light.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-LightItalic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-MediumItalic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Medium.ttf") format("truetype");
+}
+.container {
+  flex-direction: column;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 10vh;
+}
+@media (min-width: 50rem) {
+  .container {
+    padding: 5rem 0;
+  }
+}
+@media (min-width: 74rem) {
+  .container {
+    padding: 2rem 0;
+  }
+}/*# sourceMappingURL=index.css.map */
