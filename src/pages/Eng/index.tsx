@@ -66,6 +66,13 @@ export const Eng: React.FC = () => {
             <p className='bodyText'>In crypto, solving technical challenges is often closely correlated with the economic (incentive) design of a system. This requires a particular breed of expertise—and our multi-disciplinary team has the deep, first-hand experience to tackle any crypto-economic design challenge.</p>
           </div>
         </div>
+        <div className='doubleColumn'>
+          <h4>Prototyping</h4>
+          <div className='bodyTextWrapper'>
+            <p className='bodyText'>We prove the technical feasibility of novel ideas and concepts.</p>
+            <p className='bodyText'>We offer prototyping services to ensure that all elements of a design are working as expected and the viability of the proposed solution is established. Have assumptions you want to stress test? Get in touch with us today. </p>
+          </div>
+        </div>
       </section>
     </div>
   )

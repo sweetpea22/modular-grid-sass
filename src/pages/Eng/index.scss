@@ -4,7 +4,7 @@
 
 .container {
   @media #{$mq-md} {
-    padding: 5rem 2rem;
+    padding: 5rem 0;
     margin-top: 0vh;
   }
   @media #{$mq-lg} {
@@ -14,12 +14,14 @@
   display: flex;
   justify-content: left;
   margin-top: 5vh;
+  overflow-x: hidden;
 }
 
 .contentWrapper {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  width: 100%;
 }
 
 .headerTextWrapper {
@@ -68,6 +70,7 @@
   p {
     @extend %body;
     margin: .5rem 0;
+    width: 90%;
   }
 }
 
@@ -93,10 +96,9 @@ h4 {
     flex-direction: row;
   }
   display: flex;
-
+  flex-direction: column;
   h4 {
     width: 50%;
-    margin-right: 2rem;
   }
   
   p {
@@ -118,13 +120,10 @@ h4 {
   }
 
 }
-.doubleColumnWrapper {
+.featuredContentWrapper .doubleColumnWrapper {
   @media #{$mq-md} {
-    flex-direction: row;
     margin: 0 2rem;
   }
-  display: flex;
-  flex-direction: column;
 }
 
 .techAdvisory { 
@@ -148,19 +147,17 @@ h4 {
 
 .itemsWrapper { 
   @media #{$mq-md} {
-    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);;
     margin-top: 1rem;
-    flex: 25%;
   }
-  flex: 50%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .item {
+  width: 100%;
   div { 
-    width: 250px;
-    height: 150px;
+    height: 140px;
     background: gray;
     margin-right: 1rem;
   }
@@ -168,23 +165,30 @@ h4 {
 
 .bodyText {
   @extend %body;
-  margin: .5rem 0;
+  @media #{$mq-md} {
+    margin: .5rem 0;
+  }
+  margin: .25rem 0 1rem 0;
 }
 
 .doubleColumn {
   @media #{$mq-md} {
     flex-direction: row;
   }
-  width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 2rem;
   
   h4 {
-    margin-left: 2rem;
-    width: 50%;
+    @media #{$mq-md} {
+      width: 50%;
+    }
+    width: 100%;
   }
   .bodyTextWrapper {
-    width: 50%;
+    @media #{$mq-md} {
+      width: 50%;
+    }
+    width: 100%;
   }
 }
