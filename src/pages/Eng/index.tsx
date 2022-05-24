@@ -17,14 +17,14 @@ export const Eng: React.FC = () => {
             We investigate hard problems and create specifications to help your protocol or team explore what’s possible. Got quandaries on technical or business frontiers? We’ll pioneer an elegant and customized solution for you. 
           </p>
         </div>
-        <div className='featuredContentWrapper'>
+        <div className='featuredContent'>
           <img src="/eng.png" alt=""/>
           <div className='doubleColumnWrapper'>
             <h4>Example Network</h4>
             <p>Read about how we helped the team at ExampleNet with writing their specification for the Alice Validator.</p>
           </div>
         </div>
-        <div className='techAdvisory'>
+        {/* <div className='techAdvisory'>
           <div className='doubleColumnWrapper'>
             <h4>Technical design advisory & implementation consulting</h4>
             <div>
@@ -58,7 +58,7 @@ export const Eng: React.FC = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className='doubleColumn'>
           <h4>Crypto-economics consulting</h4>
           <div className='bodyTextWrapper'>

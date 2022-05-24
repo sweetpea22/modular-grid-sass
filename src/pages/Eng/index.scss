@@ -85,7 +85,7 @@ h4 {
   margin: .5rem 0;
 }
 
-.featuredContentWrapper {
+.featuredContent {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
@@ -104,6 +104,7 @@ h4 {
   flex-direction: column;
   h4 {
     width: 50%;
+    padding-right: 1rem;
   }
   
   p {
@@ -125,9 +126,9 @@ h4 {
   }
 
 }
-.featuredContentWrapper .doubleColumnWrapper {
+.featuredContent .doubleColumnWrapper {
   @media #{$mq-md} {
-    margin: 0 2rem;
+    // margin: 0 2rem;
   }
 }
 
