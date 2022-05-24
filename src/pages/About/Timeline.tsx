@@ -5,7 +5,7 @@ interface TabProps {
   year: string;
   isActive: boolean;
   id: string;
-  onClick?: any
+  onClick?: any;
 }
 
 export const timelineData = [
