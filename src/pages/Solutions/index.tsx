@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss';
 
-export const Eng: React.FC = () => {
+export const Solutions: React.FC = () => {
   return (
     <div className='solutions-container'>
       <section className='contentWrapper'>
