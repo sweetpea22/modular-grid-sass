@@ -52,6 +52,11 @@
   padding: .6rem 1rem;
   box-shadow: none;
   border: 1px solid $gray-900;
+  transition: all 0.15s ease-in-out; 
+  &:hover, &:active {
+    cursor: pointer;
+    background: $gray-900;
+  }
 }
 
 .singleColumnText { 
