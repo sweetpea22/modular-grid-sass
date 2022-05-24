@@ -24,7 +24,6 @@ $font-family: Neue Montreal, Arial, sans-serif;
   @include font-style(2.125rem, 2.75rem);
   letter-spacing: -0.01em;
 }
-
 %body-lg {
   @include font-style(1.5rem, 2rem);
 }

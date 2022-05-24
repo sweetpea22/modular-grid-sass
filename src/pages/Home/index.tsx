@@ -3,8 +3,8 @@ import './index.scss';
 
 export const Home: React.FC = () => {
   return (
-    <div className='container'>
-      <section className='contentWrapper'>
+    <div className='home-container'>
+      <section className='home-contentWrapper'>
         <h2 className='titleText'>What you can do with X Project</h2>
         <main className='featureWrapper'>
           <div className='feature'>
