@@ -12,15 +12,15 @@ interface TabProps {
 export const timelineData = [
   {
     year: '0',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'in 2019, something happened.',
   },
   {
     year: '0',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'in 2019, something happened.',
   },
   {
     year: '0',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'in 2019, something happened.',
   },
   {
     year: '1',

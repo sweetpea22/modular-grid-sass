@@ -7,7 +7,6 @@ export const Solutions: React.FC = () => {
       <section className='contentWrapper'>
         <header className='headerTextWrapper'>
           <h1 className='titleText'>Solutions & Research</h1>
-          <button className='primaryBtn'>Request a quote</button>
         </header>
         <div className='singleColumnText'>
           <h4>
@@ -16,6 +15,7 @@ export const Solutions: React.FC = () => {
           <p>
             We investigate hard problems and create specifications to help your protocol or team explore what’s possible. Got quandaries on technical or business frontiers? We’ll pioneer an elegant and customized solution for you. 
           </p>
+          <button className='primaryBtn'>Request a quote</button>
         </div>
         <div className='featured'>
           <img src="/eng.png" alt=""/>

@@ -2,7 +2,7 @@
 @import "src/styles/colors.scss";
 @import "src/styles/typography.scss";
 
-$dot-size: 1.625rem;
+$dot-size: 1.2rem;
 
 .about-container {
   @media #{$mq-md} {
@@ -116,7 +116,7 @@ h4 {
     min-height: 40vh;
     padding: .5rem 2rem;
   }
-  min-height: 60vh;
+  min-height: 50vh;
   background: $gray-900;
   width: 100%;
   padding: 1rem;
@@ -165,14 +165,18 @@ h4 {
   opacity: 0;
   display: none;
   flex-direction: column;
+  transition-duration: 1s ease-in-out;
 
   .line {
     position: relative;
     width: 100%;
     height: 2px;
     background: $gray-800;
-    top: 10%;
+    top: 8%;
     z-index: 0;
+    &:last-of-type {
+      background: linear-gradient(90deg, rgba(89,89,89,1) 0%, rgba(4,25,29,1) 100%);
+    }
   }
 
   .dot {
