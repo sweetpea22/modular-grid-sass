@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './index.scss';
+import cls from 'classnames';
 
 interface TabProps {
   year: string;
@@ -10,8 +11,53 @@ interface TabProps {
 
 export const timelineData = [
   {
-    id: '0',
-  }
+    year: '0',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '0',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '0',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '1',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '1',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '1',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '2',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '3',
+    text: 'in 2020, something happened here at ChainSafe',
+  },
+  {
+    year: '3',
+    text: 'in 2020, something happened here at ChainSafe',
+  },
+  {
+    year: '3',
+    text: 'in 2020, something happened here at ChainSafe',
+  },
+  {
+    year: '4',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '4',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+  },
 ]
 
 export const tabYears = [
@@ -43,6 +89,7 @@ export const Tab: React.FC<TabProps> = ({year, isActive, id, onClick}) => {
       key={id}
       id={id}
       onClick={onClick}
+      className={cls({'tab--selected': isActive === true })}
     >
       {year}
     </p>
@@ -61,11 +108,22 @@ export const Timeline: React.FC = () => {
 
   return (
     <div className='timeline-container'>
-      <section className='line'></section>
       <div className='tabMenu'>
         {tabYears.map((t) => (
           <Tab key={t.id} isActive={activeTab === parseInt(t.id)} id={t.id} onClick={handleClick} year={t.year}/>
           ))}
+      </div>
+      <div className='tabContent-container'>
+        {timelineData.map((t, index) => (  
+          <div className={cls('tabContent', {'activeTabContent': activeTab === parseInt(t.year)})}>
+            <section className='line'></section>
+            <div className='dot'></div>
+            <p>{t.text}</p>
+          </div>
+      
+        ))}
+        
+
       </div>
     </div>
   )
