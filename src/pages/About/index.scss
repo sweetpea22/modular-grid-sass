@@ -76,7 +76,7 @@ h4 {
 }
 
 
-.bodyText {
+.about-container .bodyText {
   @extend %body-lg;
   @media #{$mq-md} {
     margin: -0.5rem 0 1.5rem 0;
@@ -109,20 +109,43 @@ h4 {
   }
 }
 
+.timeline-container {
+  @media #{$mq-md} {
+    min-height: 40vh;
+    padding: .5rem 2rem;
+  }
+  min-height: 60vh;
+  background: $gray-900;
+  width: 100%;
+  padding: 1rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  
+  .line {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: $gray-800;
+    top: 45%;
+  }
+}  
+
 .activeTab {
   color: $primary;
   font-weight: 600;
-}
+}  
 
 .tabMenu {
   @media #{$mq-md} {
+    display: flex;
     flex-direction: row;
     margin: 1rem .5rem;
-    justify-content: flex-start;
   }
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   
   p {
     @media #{$mq-md} {
@@ -132,11 +155,11 @@ h4 {
     
     @extend %body-lg;
     color: $gray-700;
-    margin: .4rem 0;
+    margin-right: .5rem;
     cursor: pointer;
     transition: all 0.3s ease-out;
     &:hover, &:active {
-      color: $gray-900;
+      color: $gray-850;
     }
   }
 }

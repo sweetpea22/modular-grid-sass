@@ -13,7 +13,7 @@ export const Services: React.FC = () => {
         <div className='service-container'>
           <div className='service'>
             <img src="/pen.jpg" alt=""/>
-            <a href="/"><h1>Solutions & Research</h1></a>
+            <a href="/solutions"><h1>Solutions & Research</h1></a>
           </div>
           <div className='service'>
             <img src="/gears.jpg" alt=""/>

@@ -60,10 +60,13 @@ export const Timeline: React.FC = () => {
   }
 
   return (
-    <div className='tabMenu'>
-      {tabYears.map((t) => (
-        <Tab key={t.id} isActive={activeTab === parseInt(t.id)} id={t.id} onClick={handleClick} year={t.year}/>
-      ))}
+    <div className='timeline-container'>
+      <section className='line'></section>
+      <div className='tabMenu'>
+        {tabYears.map((t) => (
+          <Tab key={t.id} isActive={activeTab === parseInt(t.id)} id={t.id} onClick={handleClick} year={t.year}/>
+          ))}
+      </div>
     </div>
   )
 }

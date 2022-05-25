@@ -169,7 +169,7 @@ h4 {
   }
 }
 
-.bodyText {
+.solutions-container .bodyText {
   @extend %body;
   @media #{$mq-md} {
     margin: .5rem 0;
