@@ -36,14 +36,14 @@ export const Events: React.FC = () => {
           <div className='leftCol'>
             <p>Don't Miss an Update</p>
             <div className='links'>
-              <a href='http://google.com' target='__blank' rel='noopener noreferrer'>YouTube</a>
-              <a href='http://google.com' target='__blank' rel='noopener noreferrer'>Medium</a>
-              <a href='http://google.com' target='__blank' rel='noopener noreferrer'>Twitter</a>
+              <a href='http://google.com' target='__blank' rel='noopener noreferrer'>YouTube<img className='link--external' src="./arrow.png" alt=""/></a>
+              <a href='http://google.com' target='__blank' rel='noopener noreferrer'>Medium<img className='link--external' src="./arrow.png" alt=""/></a>
+              <a href='http://google.com' target='__blank' rel='noopener noreferrer'>Twitter<img className='link--external' src="./arrow.png" alt=""/></a>
             </div>
           </div>
           <div className='rightCol'>
             <p>Past Events</p>
-            <a href='http://google.com'rel='noopener noreferrer'>CSCON[1] (Recordings)</a>
+            <a href='http://google.com'rel='noopener noreferrer'>CSCON[1] (Recordings)<img className='link--external' src="./arrow.png" alt=""/></a>
           </div>
         </div>
       </section>
