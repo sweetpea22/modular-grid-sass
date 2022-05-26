@@ -12,51 +12,63 @@ interface TabProps {
 export const timelineData = [
   {
     year: '0',
-    text: 'in 2019, something happened.',
+    text: 'Founders meet at Ethereum Developers Meetup Toronto',
   },
   {
     year: '0',
-    text: 'in 2019, something happened.',
+    text: 'ChainSafe joins the Alpha Start-up Initiative at Web Summit in Lisbon',
   },
   {
     year: '0',
-    text: 'in 2019, something happened.',
+    text: 'Curriculum created for Ethereum Developer course at York University',
   },
   {
     year: '1',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'Consulting relationship with Polymath and Shyft Network established',
   },
   {
     year: '1',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'The ChainSafe team grows to double digits',
   },
   {
     year: '1',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'ChainSafe receives grant from Vitalik Buterin for Lodestar development',
   },
   {
     year: '2',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'Development begins on Gossamer, a Go implementation of the Polkadot Runtime Environment',
+  },
+  {
+    year: '2',
+    text: 'ChainSafe starts hosting Ethereum Developers Meetup Toronto',
+  },
+  {
+    year: '2',
+    text: 'Development begins on Forest, a Rust implementation of the Filecoin Protocol',
   },
   {
     year: '3',
-    text: 'in 2020, something happened here at ChainSafe',
+    text: 'ChainSafe closes pre-seed (please verify language) round led by ConsenSys',
   },
   {
     year: '3',
-    text: 'in 2020, something happened here at ChainSafe',
+    text: 'ChainSafe takes over development and maintenance of web3.js',
   },
   {
     year: '3',
-    text: 'in 2020, something happened here at ChainSafe',
+    text: 'ChainSafe hosts first annual conference: CSCON[0]',
   },
   {
     year: '4',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'ChainSafe acquires blockchain R&D firm NodeFactory',
   },
   {
     year: '4',
-    text: 'Founders meet at Ethereum Developers Meetup Toronto',
+    text: 'ChainSafe opens a satelite office in Berlin',
+  },
+  {
+    year: '4',
+    text: 'The ChainSafe team grows to 100+ members',
   },
 ]
 
