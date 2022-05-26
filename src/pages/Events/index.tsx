@@ -12,23 +12,23 @@ export const Events: React.FC = () => {
         <div className='event-grid'>
           <p>Upcoming conferences and events</p>
           <div className='event'>
-            <a href='http://google.com' target='__blank' rel='noreferrer'><p>EthPrague</p></a>
+            <a href='http://google.com' target='__blank' rel='noreferrer'><p>EthPrague<img className='link--external' src="./arrow.png" alt=""/></p></a>
             <p className='date'>June 11th <span>In Person</span></p>
           </div>
           <div className='event'>
-            <a href='http://google.com' target='__blank' rel='noreferrer'><p>Ethereum Developers Meetup Toronto</p></a>
+            <a href='http://google.com' target='__blank' rel='noreferrer'><p>Ethereum Developers Meetup Toronto<img className='link--external' src="./arrow.png" alt=""/></p></a>
             <p className='date'>June 11th <span>Virtual</span></p>
           </div>
           <div className='event'>
-            <a href='http://google.com' target='__blank' rel='noreferrer'><p>Gaming Community Call</p></a>
+            <a href='http://google.com' target='__blank' rel='noreferrer'><p>Gaming Community Call<img className='link--external' src="./arrow.png" alt=""/></p></a>
             <p className='date'>June 18th <span>Virtual</span></p>
           </div>
           <div className='event'>
-            <a href='http://google.com' target='__blank' rel='noreferrer'><p>Polkadot Guild Meetup</p></a>
+            <a href='http://google.com' target='__blank' rel='noreferrer'><p>Polkadot Guild Meetup<img className='link--external' src="./arrow.png" alt=""/></p></a>
             <p className='date'>June 25th <span>Virtual</span></p>
           </div>
           <div className='event'>
-            <a href='http://google.com' target='__blank' rel='noreferrer'><p>EthCC & ETHParis</p></a>
+            <a href='http://google.com' target='__blank' rel='noreferrer'><p>EthCC & ETHParis<img className='link--external' src="./arrow.png" alt=""/></p></a>
             <p className='date'>July 11-19th <span>In Person</span></p>
           </div>
         </div>
