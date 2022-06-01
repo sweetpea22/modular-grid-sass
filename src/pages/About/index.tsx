@@ -2,6 +2,7 @@ import React from 'react';
 import './index.scss';
 import { Timeline } from './Timeline';
 import { Header2 } from '../../components/Header';
+import Header3 from '../../components/Header/index2';
 
 export const About: React.FC = () => {
 

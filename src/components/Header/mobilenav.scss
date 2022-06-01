@@ -21,21 +21,6 @@ nav {
 }
 
 
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 .navMenu {
   top: 100px;
   position: absolute;
@@ -48,10 +33,15 @@ nav {
   font-size: 1.2rem;
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  margin: 1.25rem .5rem;
+  margin: 1.25rem 1rem;
+  // text-align: left;
+  p {
+    color: $gray-800;
+  }
 }
 
 .noUnderline {
@@ -67,12 +57,13 @@ nav {
   cursor: pointer;
   width: 2rem;
   position: absolute;
+  right: 50px;
   height: 2rem;
   border: none;
-  background: black;
   z-index: 5000;
-  padding: 3rem;
+  padding: 1rem;
   border: none;
   outline: none;
+  background: transparent;
 
 }
