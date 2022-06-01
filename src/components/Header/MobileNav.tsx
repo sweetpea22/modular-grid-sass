@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useDimensions } from "./use-dimensions";
 import { motion, useCycle } from "framer-motion";
 import "./mobilenav.scss";
 
@@ -82,12 +81,10 @@ const navlinks: NavLink[] = [
 
 export const MobileNav = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const {dynamicHeight} = useDimensions();
   return (
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
-      custom={dynamicHeight}
       
     >
       <motion.div className='background' variants={sidebar} />
