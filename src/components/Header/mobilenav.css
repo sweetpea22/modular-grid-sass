@@ -1,0 +1,85 @@
+@font-face {
+  font-family: Neue Montreal;
+  src: url("../assets/fonts/NeueMontreal-Regular.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Bold.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-BoldItalic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Italic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Light.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-LightItalic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-MediumItalic.ttf") format("truetype"), url("../assets/fonts/NeueMontreal-Medium.ttf") format("truetype");
+}
+:root {
+  --primary-color-hue: 56;
+  --primary-color-saturation: 100%;
+  --gray-color-hue: 0;
+  --gray-color-saturation: 0%;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navMenu {
+  top: 100px;
+  position: absolute;
+  right: 0;
+  padding: 25px;
+  max-width: 80%;
+}
+
+.navlink {
+  font-size: 1.2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin: 1.25rem 0.5rem;
+}
+
+.noUnderline {
+  text-decoration: none;
+  color: hsl(var(--gray-color-hue), var(--gray-color-saturation), 100%);
+}
+
+.menuToggle {
+  display: block;
+  cursor: pointer;
+  width: 2rem;
+  position: absolute;
+  height: 2rem;
+  border: none;
+  background: black;
+  z-index: 5000;
+  padding: 3rem;
+  border: none;
+  outline: none;
+}
+@media (min-width: 74rem) {
+  .menuToggle {
+    display: none;
+  }
+}/*# sourceMappingURL=mobilenav.css.map */

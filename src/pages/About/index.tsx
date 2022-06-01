@@ -1,13 +1,15 @@
 import React from 'react';
 import './index.scss';
 import { Timeline } from './Timeline';
+import { Header2 } from '../../components/Header';
 
 export const About: React.FC = () => {
 
   return (
-    <div className='about-container'>
+    <>
+    <Header2 />
+    {/* <div className='about-container'>
       <section className='contentWrapper'>
-        {/* header */}
         <header className='headerTextWrapper'>
           <h1 className='titleText'>About</h1>
         </header>
@@ -18,9 +20,9 @@ export const About: React.FC = () => {
           </div>
           <img src='/about.png' alt=""/>
         </div>
-      {/* timeline */}
         <Timeline/>
       </section>
-    </div>
+    </div> */}
+    </>
   )
 }
