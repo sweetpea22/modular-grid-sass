@@ -3,6 +3,8 @@ import './index.scss';
 import {motion} from 'framer-motion';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
+import { MenuToggle } from './MenuToggle';
+
 
 const menu = [
   {
