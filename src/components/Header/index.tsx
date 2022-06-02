@@ -32,43 +32,79 @@ const menu = [
   },
 ];
 
-const ButtonParentVariants = {
-  closed: {
-    height: "4rem",
+const animateBg = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 1200px 40px)`,
     transition: {
-      duration: ".5"
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2
     }
-  },
-  open: {
-    height: "100vh",
-    background: "black",
+  }),
+  closed: {
+    clipPath: "circle(0px at 1200px 40px)",
     transition: {
-      duration: ".5" 
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40
     }
   }
 };
 
-const staggerVariants = {
+const animateMenu = {
   closed: {
-    opacity: 0,
     transition: {
-      delay: .3,
+      staggerChildren: 0.05,
       staggerDirection: -1,
     }
   },
   open: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    }
+  }
+};
+
+const animateOpacity = {
+  closed: {
+    y: 25,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000}
+    }
+  },
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: { 
+      delay: 1,
+      y: { stiffness: 1000, velocity: -400}
+    },
+  }
+}
+
+const animateMenuItem = {
+  closed: {
+    y: -25,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000}
+    }
+  },
+  open: {
+    y: 0,
     opacity: 1,
     transition: {
-      delay: .3,
-      staggerChildren: 0.05,
-      delayChildren: 0.3,
+      y: { stiffness: 1000, velocity: -400}
     }
   }
 }
 
 
-export const Header2: React.FC = () => {
 
+export const Header2: React.FC = () => {
   const [isOpen, toggleOpen] = useState(false);
 
   return (
@@ -76,25 +112,28 @@ export const Header2: React.FC = () => {
       <motion.div 
       initial='closed'
       animate={isOpen ? 'open' : 'closed'}
-      variants={ButtonParentVariants}
       className='menuItems'>
-        <button onClick={() => toggleOpen(!isOpen)}>Menu Item A</button>
-      {isOpen && (
-        <motion.div 
-        initial='closed'
-        animate={isOpen ? 'open' : 'closed'}
-        className='bg bg--expanded'>
-          <motion.div className='subMenu' variants={staggerVariants}>
-            <h4>Browse all</h4>
-            <motion.div className='rightColumn'>
-              <NavLink to={'/'}><p>About</p></NavLink>
-              <NavLink to={'/'}><p>About</p></NavLink>
-              <NavLink to={'/'}><p>About</p></NavLink>
-              <NavLink to={'/'}><p>About</p></NavLink>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      )}
+      <button onClick={() => toggleOpen(!isOpen)}>Menu Item A</button>
+      <motion.div className='bg' variants={animateBg}></motion.div>
+      <motion.div className='subMenu' variants={animateMenu}>
+        <motion.h4 variants={animateMenuItem}>Browse all</motion.h4>
+        <div className='rightColumn'>
+          <motion.li variants={animateMenuItem}>
+            <NavLink to={'/'}><p>About</p></NavLink>
+            <motion.h5 variants={animateOpacity}>Learn more about the company</motion.h5>
+          </motion.li>
+          <motion.li variants={animateMenuItem}>
+            <NavLink to={'/'}><p>Work at ChainSafe</p></NavLink>
+            <motion.h5 variants={animateOpacity}>Build the foundation of Web3</motion.h5></motion.li>
+          <motion.li variants={animateMenuItem}>
+            <NavLink to={'/'}><p>Events</p></NavLink>
+            <motion.h5 variants={animateOpacity}>Meet us online or in-person</motion.h5></motion.li>
+          <motion.li variants={animateMenuItem}>
+            <NavLink to={'/'}><p>Media and Press</p></NavLink>
+            <motion.h5 variants={animateOpacity}>Presskits and media</motion.h5>
+          </motion.li>
+        </div>
+      </motion.div>
       </motion.div>
     </header>
   );

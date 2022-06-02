@@ -19,6 +19,8 @@ header {
 
 .menuItems {
   button {
+    position: absolute;
+    z-index: 5000;
     background: transparent;
     border: none;
     font-size: 18px;
@@ -30,40 +32,58 @@ header {
 }
 
 .bg {
-  &--expanded {
-    display: flex;
-    flex-direction: column;
-    height: 4rem;
-    width: 100vw;
-  }
+  position: absolute;
+  top: 0; left: 0; 
+  height: 100vh;
+  width: 100vw;
+  background: black;
 }
 
 .subMenu {
+  @media #{$mq-lg} {
+    padding: 4rem 10rem;
+  }
+  padding: 2rem 5rem;
   display: flex;
   align-items: baseline;
-  // padding: 2rem;
   position: relative;
   margin: 0 auto;
   h4, p {
     color: white;
-    font-size: 20px;
   }
 }
 
 .rightColumn {
-    margin-left: 4rem;
+    @media #{$mq-lg} {
+      margin-left: 10rem;
+    }
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    li {
+      list-style-type: none;
+    }
 
     a { 
       text-decoration: none;
     }
 
+    h5 {
+      font-size: 18px;
+      color: $gray-800;
+      font-weight: 400;
+      margin-block-end: 0;
+      margin-block-start: 0;
+    }
+
     a > p {
-      transition: all .2s ease-in;
+      font-size: 24px;
+      transition: all .25s ease-in;
       &:hover {
-        color: red;
+        color: $gray-800
       }
+      margin-block-end: 8px ;
     }
 }
