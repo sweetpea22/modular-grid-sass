@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import { motion, MotionValue, useViewportScroll } from 'framer-motion';
+import { motion, useCycle, useViewportScroll } from 'framer-motion';
 import { navbarVariants, bgVariants, menuVariants, opacityVariants, menuItemVariants } from './animationVariants';
 import { NavLink } from 'react-router-dom';
-
+import { MenuToggle } from '../Header/MenuToggle';
 
 const menu = [
   {
@@ -55,8 +55,6 @@ export const FadeOutNav = (props: Props) => {
     return scrollY.onChange(() => update());
   })
 
-
-
   return (
     <>
       <motion.nav 
@@ -70,21 +68,23 @@ export const FadeOutNav = (props: Props) => {
         </span>
         <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
         <motion.div className='bg' variants={bgVariants}></motion.div>
-          <ul className='navbar__menu' >
-            {menu.map(({title, options}) => (
-              <li onClick={() => toggleOpen(!isOpen)} className='menu-item' key={title}>{title}
-              </li> 
-            ))}
-            <motion.div className='submenu' variants={menuVariants}>
-            <motion.h4 variants={menuItemVariants}>Browse all</motion.h4>
+        <ul className='navbar__menu' >
+          {menu.map(({title, options}) => (
+            <li onClick={() => toggleOpen(!isOpen)} className='menu-item' key={title}>{title}
+            </li> 
+          ))}
+        </ul>
+        {isOpen && (
+          <motion.div className='submenu' variants={menuVariants}>
+            <NavLink to={'/'}><motion.h4 variants={menuItemVariants}>Browse all</motion.h4></NavLink>
             <div className='submenu__right'>
               <motion.li variants={menuItemVariants}>
                 <NavLink to={'/'}><p>About</p></NavLink>
                 <motion.h5 variants={opacityVariants}>Learn more about the company</motion.h5>
               </motion.li>
             </div>
-          </motion.div>
-          </ul>
+          <MenuToggle toggle={() => toggleOpen(!isOpen)} />
+          </motion.div>)}
         </motion.div>
       </motion.nav>
     </>
