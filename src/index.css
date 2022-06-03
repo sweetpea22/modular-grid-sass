@@ -33,6 +33,7 @@ code {
 
 #root {
   min-height: 100vh;
+  overflow: auto;
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;

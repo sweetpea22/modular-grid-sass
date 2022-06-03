@@ -124,16 +124,6 @@ export const Header2: React.FC = () => {
             <NavLink to={'/'}><p>About</p></NavLink>
             <motion.h5 variants={animateOpacity}>Learn more about the company</motion.h5>
           </motion.li>
-          <motion.li variants={animateMenuItem}>
-            <NavLink to={'/'}><p>Work at ChainSafe</p></NavLink>
-            <motion.h5 variants={animateOpacity}>Build the foundation of Web3</motion.h5></motion.li>
-          <motion.li variants={animateMenuItem}>
-            <NavLink to={'/'}><p>Events</p></NavLink>
-            <motion.h5 variants={animateOpacity}>Meet us online or in-person</motion.h5></motion.li>
-          <motion.li variants={animateMenuItem}>
-            <NavLink to={'/'}><p>Media and Press</p></NavLink>
-            <motion.h5 variants={animateOpacity}>Presskits and media</motion.h5>
-          </motion.li>
         </div>
       </motion.div>
       </motion.div>

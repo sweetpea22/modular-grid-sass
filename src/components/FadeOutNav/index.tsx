@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { motion, MotionValue, useViewportScroll } from 'framer-motion';
-import classNames from 'classnames';
+import { navbarVariants, bgVariants, menuVariants, opacityVariants, menuItemVariants } from './animationVariants';
 import { NavLink } from 'react-router-dom';
 
 
@@ -41,11 +41,12 @@ export const FadeOutNav = (props: Props) => {
 
 
   const [hidden, setHidden] = useState(false);
+  const [isOpen, toggleOpen] = useState(false);
   
   const update = () => {
     if (scrollY?.get() < scrollY.getPrevious()) {
       setHidden(false);
-    } else if (scrollY?.get() > 20 && scrollY?.get() > scrollY?.getPrevious()) {
+    } else if (scrollY?.get() > 100 && scrollY?.get() > scrollY?.getPrevious()) {
       setHidden(true);
     }
   }
@@ -54,40 +55,37 @@ export const FadeOutNav = (props: Props) => {
     return scrollY.onChange(() => update());
   })
 
-  const variants = {
-    visible: {
-      opacity: 1, y: 0
-    },
-    hidden: {
-      opacity: 0, y: -25
-    },
-  }
+
 
   return (
     <>
       <motion.nav 
-      className='fadeout-nav'
-      variants={variants}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }} >
+        className='navbar'
+        variants={navbarVariants}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }} >
         <span className='brand-container'>
           <img src='/logo192.png' alt=""/>
           <h4>ChainSafe</h4>
         </span>
-        <ul className='fadeout-nav__menu fadeout-nav--big-screen'>
-          {menu.map(({title, options}) => (
-            <li className='menu-item' key={title}>{title}
-              {/* <div>{title}</div>
-                <ul>
-                {options.map(({title, to}) => (
-                  <div className='subMenu'>
-                    <NavLink className='submenu-item' to={to}>{title}</NavLink>
-                  </div>
-                ))}
-                </ul> */}
-            </li> 
-          ))}
-        </ul>
+        <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
+        <motion.div className='bg' variants={bgVariants}></motion.div>
+          <ul className='navbar__menu' >
+            {menu.map(({title, options}) => (
+              <li onClick={() => toggleOpen(!isOpen)} className='menu-item' key={title}>{title}
+              </li> 
+            ))}
+            <motion.div className='submenu' variants={menuVariants}>
+            <motion.h4 variants={menuItemVariants}>Browse all</motion.h4>
+            <div className='submenu__right'>
+              <motion.li variants={menuItemVariants}>
+                <NavLink to={'/'}><p>About</p></NavLink>
+                <motion.h5 variants={opacityVariants}>Learn more about the company</motion.h5>
+              </motion.li>
+            </div>
+          </motion.div>
+          </ul>
+        </motion.div>
       </motion.nav>
     </>
   )
