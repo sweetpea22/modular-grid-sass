@@ -1,9 +1,12 @@
 import React from 'react'
+import { FadeOutNav } from '../../components/FadeOutNav';
 import './index.scss';
 
 export const Solutions: React.FC = () => {
   return (
-    <div className='solutions-container'>
+    <>
+      <FadeOutNav />
+      <div className='solutions-container'>
       <section className='contentWrapper'>
         <header className='headerTextWrapper'>
           <h1 className='titleText'>Solutions & Research</h1>
@@ -74,6 +77,7 @@ export const Solutions: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }

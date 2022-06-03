@@ -42,8 +42,8 @@ header {
 .subMenu {
   @media #{$mq-lg} {
     padding: 4rem 10rem;
+
   }
-  padding: 2rem 5rem;
   display: flex;
   align-items: baseline;
   position: relative;
