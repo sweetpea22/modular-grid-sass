@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import { motion, useCycle, useViewportScroll } from 'framer-motion';
+import { motion, useViewportScroll } from 'framer-motion';
 import { navbarVariants, bgVariants, menuVariants, opacityVariants, menuItemVariants } from './animationVariants';
 import { NavLink } from 'react-router-dom';
 import { MenuToggle } from '../Header/MenuToggle';
+// import useMediaQuery from '@mui/material/useMediaQuery';
 
 const menu = [
   {
@@ -42,6 +43,7 @@ export const FadeOutNav = (props: Props) => {
 
   const [hidden, setHidden] = useState(false);
   const [isOpen, toggleOpen] = useState(false);
+  // const isBigScreen = useMediaQuery("(min-width: 1170px)");
   
   const update = () => {
     if (scrollY?.get() < scrollY.getPrevious()) {
@@ -86,6 +88,9 @@ export const FadeOutNav = (props: Props) => {
           <MenuToggle toggle={() => toggleOpen(!isOpen)} />
           </motion.div>)}
         </motion.div>
+        {/* {(!isBigScreen && !isOpen) && (
+          <MenuToggle toggle={() => toggleOpen(!isOpen)} />
+        )}  */}
       </motion.nav>
     </>
   )
