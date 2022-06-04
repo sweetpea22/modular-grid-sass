@@ -21,9 +21,9 @@ export const bgVariants = {
   closed: {
     clipPath: "circle(0px at 1200px 40px)",
     transition: {
-      delay: 0.5,
       type: "spring",
       stiffness: 400,
+      duration: 0.3,
       damping: 40
     }
   }
@@ -49,7 +49,7 @@ export const opacityVariants = {
     y: 25,
     opacity: 0,
     transition: {
-      y: { stiffness: 1000}
+      y: { stiffness: 1000, velocity: 40}
     }
   },
   open: {
