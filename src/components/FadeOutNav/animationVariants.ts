@@ -11,7 +11,7 @@ export const navbarVariants = {
 
 export const bgVariants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 1200px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at 1200px 20px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -19,12 +19,11 @@ export const bgVariants = {
     }
   }),
   closed: {
-    clipPath: "circle(0px at 1200px 40px)",
+    clipPath: "circle(0px at 1200px 20px)",
     transition: {
       type: "spring",
-      stiffness: 400,
-      duration: 0.3,
-      damping: 40
+      stiffness: 40,
+      restDelta: 2,
     }
   }
 };
@@ -38,8 +37,8 @@ export const menuVariants = {
   },
   open: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      // staggerChildren: 0.1,
+      // delayChildren: 0.2,
     }
   }
 };
@@ -74,7 +73,7 @@ export const menuItemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: -400}
+      y: { stiffness: 1000, velocity: -2}
     }
   }
 }

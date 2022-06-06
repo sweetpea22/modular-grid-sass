@@ -8,27 +8,30 @@ import { MenuToggle } from '../Header/MenuToggle';
 const menu = [
   {
     title: 'Products',
+    to: '/products',
     options: [
-      { title: 'Web3.JS', to: 'web3' },
-      { title: 'ChainGuardian', to: 'cg' },
-      { title: 'Lodestar', to: 'lodestar' },
+      { title: 'Storage', to: 'web3', desc: 'Integrate decentralized storage in seconds.' },
+      { title: 'Files', to: 'cg', desc: 'Encrypted storage on Filecoin.'  },
+      { title: 'ChainBridge', to: 'lodestar', desc: 'Cross-chain interop made easy.' },
     ],
   },
   {
     title: 'Services',
+    to: '/services',
     options: [
-      { title: 'Audits', to: '/services' },
-      { title: 'Consulting', to: 'consulting' },
-      { title: 'Research', to: 'research' },
+      { title: 'Audits', to: '/services', desc: 'Request a smart contract audit.' },
+      { title: 'Consulting', to: 'consulting', desc: 'Hire ChainSafe for engineering.' },
+      { title: 'Research', to: 'research', desc: 'Hire ChainSafe for research.' },
     ],
   },
   {
     title: 'Company',
+    to: '/about',
     options: [
-      { title: 'About us', to: '/about' },
-      { title: 'Brand', to: 'brand' },
-      { title: 'Press', to: 'press' },
-      { title: 'Careers', to: 'careers' },
+      { title: 'About us', to: '/about', desc: 'Company history and values' },
+      { title: 'Events', to: 'brand', desc: 'Meet us in-person or virtually.' },
+      { title: 'Media', to: 'press', desc: 'Resources and Press.' },
+      { title: 'Careers', to: 'careers', desc: 'Work on the frontier with friendly people.' },
     ],
   },
 ];
@@ -69,26 +72,31 @@ export const FadeOutNav = (props: Props) => {
         <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
         <motion.div className='bg' variants={bgVariants}></motion.div>
         <ul className='navbar__menu' >
-          {menu.map(({title, options}) => (
+          {menu.map(({title}) => (
             <li onClick={() => toggleOpen(!isOpen)} className='menu-item' key={title}>{title}
             </li> 
           ))}
         </ul>
         {isOpen && (
           <motion.div className='submenu' variants={menuVariants}>
-            <NavLink to={'/'}><motion.h4 variants={menuItemVariants}>Browse all</motion.h4></NavLink>
-            <div className='submenu__right'>
-              <motion.li variants={menuItemVariants}>
-                <NavLink to={'/'}><p>About</p></NavLink>
-                <motion.h5 variants={opacityVariants}>Learn more about the company</motion.h5>
-              </motion.li>
-            </div>
-          <MenuToggle toggle={() => toggleOpen(!isOpen)} />
-          </motion.div>)}
+            {menu.map(({title, to, options}) => (
+              <>
+                <div className='submenu__right'>
+                {to && (<NavLink to={to}><motion.h4 variants={menuItemVariants}>{title}</motion.h4></NavLink> )}
+                  {options.map(({title, to, desc}) => (
+                    <motion.li variants={menuItemVariants}>
+                      <NavLink to={to}><p>{title}</p></NavLink>
+                      { desc && <motion.h5 variants={opacityVariants}>{desc}</motion.h5> }
+                    </motion.li>
+                  ))}
+                </div>
+                <MenuToggle toggle={() => toggleOpen(!isOpen)} />
+              </>
+            ))}
+          </motion.div>
+        )}
         </motion.div>
-        {/* {(!isBigScreen && !isOpen) && (
-          <MenuToggle toggle={() => toggleOpen(!isOpen)} />
-        )}  */}
+        {/* <MenuToggle toggle={() => toggleOpen(!isOpen)} /> */}
       </motion.nav>
     </>
   )
