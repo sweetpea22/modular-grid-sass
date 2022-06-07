@@ -2,9 +2,7 @@
 @import "src/styles/colors.scss";
 @import "src/styles/typography.scss";
 
-$dot-size: 1.2rem;
-
-.event-container {
+.events {
   @media #{$mq-md} {
     padding: 5rem 0;
     margin-top: 0vh;
@@ -16,17 +14,9 @@ $dot-size: 1.2rem;
   display: flex;
   justify-content: left;
   margin-top: 5vh;
-  overflow-x: hidden;
 }
 
-.event-container .contentWrapper {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 100%;
-}
-
-.headerTextWrapper {
+.events-header {
   @media #{$mq-sm} {
     align-items: flex-start;
     padding: 3rem 0;
@@ -76,7 +66,7 @@ $dot-size: 1.2rem;
     color: $gray-900;
     transition: 0.15s ease-out;
     &:hover {
-      color: $gray-600;
+      color: $gray-700;
     }
   }
   .date { 
@@ -96,7 +86,7 @@ $dot-size: 1.2rem;
   }
 }
 
-.event-doubleColumn {
+.events .double-column {
   @media #{$mq-md} {
     flex-direction: row;
   }
@@ -107,7 +97,7 @@ $dot-size: 1.2rem;
   margin: 2rem 0; 
 }
 
-.event-doubleColumn .leftCol {
+.events .double-column .left-column {
   @media #{$mq-md} {
     width: 50%;
   }
@@ -137,12 +127,12 @@ $dot-size: 1.2rem;
     text-decoration: none;
     transition: 0.15s ease-out;
     &:hover {
-      color: $gray-600;
+      color: $gray-700;
     }
   }
 }
 
-.event-doubleColumn .rightCol {
+.events .double-column .right-column {
     @media #{$mq-md} {
       width: 50%;
     }
@@ -157,11 +147,11 @@ $dot-size: 1.2rem;
     color: $gray-900;
     text-decoration: none;
     &:hover {
-      color: $gray-600;
+      color: $gray-700;
   }
   }
 }
 
-.link--external { 
+.external-link { 
   width: 20px;
 }

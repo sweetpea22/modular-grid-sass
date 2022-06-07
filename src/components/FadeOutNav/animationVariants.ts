@@ -11,7 +11,7 @@ export const navbarVariants = {
 
 export const bgVariants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 1300px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at 1250px 35px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -19,10 +19,12 @@ export const bgVariants = {
     }
   }),
   closed: {
-    clipPath: "circle(0px at 1300px 40px)",
+    clipPath: "circle(0px at 1250px 35px)",
     transition: {
       type: "spring",
-      stiffness: 40,
+      delay: 0.2,
+      stiffness: 500,
+      damping: 50,
     }
   }
 };
