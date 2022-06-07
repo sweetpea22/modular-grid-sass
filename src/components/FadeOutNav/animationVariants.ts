@@ -23,7 +23,6 @@ export const bgVariants = {
     transition: {
       type: "spring",
       stiffness: 40,
-      restDelta: 2,
     }
   }
 };
@@ -37,22 +36,21 @@ export const menuVariants = {
   },
   open: {
     transition: {
-      // staggerChildren: 0.1,
-      // delayChildren: 0.2,
+      delay: 1,
+      staggerChildren: 0.02,
+      delayChildren: 0.2,
     }
   }
 };
 
 export const opacityVariants = {
   closed: {
-    y: 25,
     opacity: 0,
     transition: {
       y: { stiffness: 1000, velocity: 40}
     }
   },
   open: {
-    y: 0,
     opacity: 1,
     transition: { 
       delay: 1,
@@ -73,7 +71,23 @@ export const menuItemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: -2}
+      y: { stiffness: 1000, velocity: 20}
+    }
+  }
+}
+
+export const colorVariants = {
+  closed: {
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000}
+    }
+  },
+  open: {
+    background: "yellow",
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: 20}
     }
   }
 }

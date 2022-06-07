@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { motion, useViewportScroll } from 'framer-motion';
-import { navbarVariants, bgVariants, menuVariants, opacityVariants, menuItemVariants } from './animationVariants';
+import { navbarVariants, bgVariants, menuVariants, opacityVariants, colorVariants, menuItemVariants } from './animationVariants';
 import { NavLink } from 'react-router-dom';
 import { MenuToggle } from '../Header/MenuToggle';
 
@@ -66,10 +66,10 @@ export const FadeOutNav = (props: Props) => {
         animate={hidden ? "hidden" : "visible"}
         transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }} >
         <motion.div className='navbar--left' variants={navbarVariants}>
-          <span className='brand-container'>
+          <div className='brand-container'>
             <img src='/logo192.png' alt=""/>
             <h4>ChainSafe</h4>
-          </span>
+          </div>
           <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
             <motion.div className='bg' variants={bgVariants}></motion.div>
             <ul className='navbar__menu' >
@@ -80,9 +80,8 @@ export const FadeOutNav = (props: Props) => {
             </ul>
           </motion.div>
         </motion.div>
-        <MenuToggle toggle={() => toggleOpen(!isOpen)} />
         {isOpen && (
-          <motion.div className='submenu' variants={menuVariants}>
+          <motion.div className='submenu' animate={isOpen ? "open" : "closed"} initial="closed"  variants={menuVariants}>
             {menu.map(({title, to, options}) => (
               <>
                 <div className='submenu__right'>
@@ -90,15 +89,18 @@ export const FadeOutNav = (props: Props) => {
                   {options.map(({title, to, desc}) => (
                     <motion.li variants={menuItemVariants}>
                       <NavLink to={to}><p>{title}</p></NavLink>
-                      { desc && <motion.h5 variants={opacityVariants}>{desc}</motion.h5> }
+                      <motion.h5 variants={opacityVariants}>{desc}</motion.h5>
                     </motion.li>
                   ))}
                 </div>
-                <MenuToggle toggle={() => toggleOpen(!isOpen)} />
+                <motion.div variants={colorVariants}>
+                  <MenuToggle toggle={() => toggleOpen(!isOpen)} />
+                </motion.div>
               </>
             ))}
           </motion.div>
         )}
+        <MenuToggle toggle={() => toggleOpen(!isOpen)} />
       </motion.nav>
     </>
   )
