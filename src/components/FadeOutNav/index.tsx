@@ -28,7 +28,7 @@ const menu = [
     title: 'Company',
     to: '/about',
     options: [
-      { title: 'About us', to: '/about', desc: 'Company history and values' },
+      { title: 'About', to: '/about', desc: 'Company history and values' },
       { title: 'Events', to: 'brand', desc: 'Meet us in-person or virtually.' },
       { title: 'Media', to: 'press', desc: 'Resources and Press.' },
       { title: 'Careers', to: 'careers', desc: 'Work on the frontier with friendly people.' },
@@ -48,7 +48,7 @@ export const FadeOutNav = (props: Props) => {
   const [isOpen, toggleOpen] = useState(false);
 
   const update = () => {
-    if (scrollY?.get() < scrollY.getPrevious()) {
+    if (scrollY?.get() < scrollY.getPrevious() && scrollY?.get() < 200) {
       setHidden(false);
     } else if (scrollY?.get() > 100 && scrollY?.get() > scrollY?.getPrevious()) {
       setHidden(true);
@@ -71,9 +71,9 @@ export const FadeOutNav = (props: Props) => {
             <img src='/logo192.png' alt=""/>
             <h4>ChainSafe</h4>
           </div>
-          <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
+          <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar--container'>
             <motion.div className='bg' variants={bgVariants}></motion.div>
-            <ul className='navbar__menu' >
+            <ul className='navbar--menu' >
               {menu.map(({title, to}) => (
                 <NavLink to={to} className='menu-item' key={title}>{title}
                 </NavLink> 

@@ -20,11 +20,13 @@ export const bgVariants = {
   }),
   closed: {
     clipPath: "circle(0px at 1250px 35px)",
+    opacity: 0,
     transition: {
       type: "spring",
       delay: 0.2,
-      stiffness: 500,
-      damping: 50,
+      stiffness: 300,
+      restDelta: 5,
+      damping: 20,
     }
   }
 };
