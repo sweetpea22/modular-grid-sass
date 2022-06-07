@@ -8,6 +8,7 @@
     margin-top: 0vh;
   }
   @media #{$mq-lg} {
+    margin: 0 $margin-lg;
     padding: 2rem 0;
   }
   flex-direction: column;

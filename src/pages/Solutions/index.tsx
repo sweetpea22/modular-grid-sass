@@ -6,7 +6,7 @@ export const Solutions: React.FC = () => {
   return (
     <>
       <FadeOutNav />
-      <div className='solutions-container'>
+      {/* <div className='solutions-container'>
       <section className='contentWrapper'>
         <header className='headerTextWrapper'>
           <h1 className='titleText'>Solutions & Research</h1>
@@ -77,7 +77,7 @@ export const Solutions: React.FC = () => {
           </div>
         </div>
       </section>
-      </div>
+      </div> */}
     </>
   )
 }

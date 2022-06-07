@@ -5,14 +5,14 @@ html {
 }
 
 body {
-  margin: 0 $margin-sm;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @media #{$mq-lg} {
-    margin: 0 $margin-lg;
+    // margin: 0 $margin-lg;
   }
   @media #{$mq-xl} {
     max-width: 80%;

@@ -36,6 +36,7 @@ const menu = [
   },
 ];
 
+
 type Props = {}
 
 export const FadeOutNav = (props: Props) => {
@@ -83,22 +84,37 @@ export const FadeOutNav = (props: Props) => {
         </motion.div>
         {isOpen && (
           <motion.div className='submenu' animate={isOpen ? "open" : "closed"} initial="closed"  variants={menuVariants}>
-            {menu.map(({title, to, options}) => (
-              <>
-                <div className='submenu__right'>
-                {to && (<NavLink to={to}><motion.h4 variants={menuItemVariants}>{title}</motion.h4></NavLink> )}
-                  {options.map(({title, to, desc}) => (
-                    <motion.li variants={menuItemVariants}>
-                      <NavLink to={to}><p>{title}</p></NavLink>
-                      <motion.h5 variants={opacityVariants}>{desc}</motion.h5>
-                    </motion.li>
-                  ))}
-                </div>
-              </>
-            ))}
+            <div className='submenu--section submenu--section__top'>
+              {menu.map(({title, to, options}, index) => (
+                (to && index <= 1) && (
+                  <ul key={index}>
+                    <NavLink to={to}>
+                      <motion.h4 variants={menuItemVariants}>{title} <span className='browse-all'>Browse all</span></motion.h4>
+                    </NavLink> 
+                    {options.map(({title, to, desc}) => (
+                      <motion.li variants={menuItemVariants}>
+                        <NavLink to={to}><p>{title}</p></NavLink>
+                        <motion.h5 variants={opacityVariants}>{desc}</motion.h5>
+                      </motion.li>
+                    ))}
+                  </ul>
+                )
+              ))}
+            </div>
+            <div className='submenu--section submenu--section__bottom'>
+              <ul>
+                {menu[2].options.map(({title, to}) => (
+                  <motion.li key={title} variants={menuItemVariants}>
+                    <NavLink to={to}><p>{title}</p></NavLink>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         )}
       </motion.nav>
     </>
   )
 }
+
+
