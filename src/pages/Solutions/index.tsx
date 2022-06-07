@@ -6,11 +6,11 @@ export const Solutions: React.FC = () => {
   return (
     <>
       <FadeOutNav />
-      {/* <div className='solutions-container'>
+      <div className='solutions-container'>
       <section className='contentWrapper'>
-        <header className='headerTextWrapper'>
+        <div className='headerTextWrapper'>
           <h1 className='titleText'>Solutions & Research</h1>
-        </header>
+        </div>
         <div className='singleColumnText'>
           <h4>
             We work on some of the toughest problems in the blockchain space.
@@ -77,7 +77,7 @@ export const Solutions: React.FC = () => {
           </div>
         </div>
       </section>
-      </div> */}
+      </div>
     </>
   )
 }
