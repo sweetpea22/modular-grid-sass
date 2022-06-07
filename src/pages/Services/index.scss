@@ -2,10 +2,12 @@
 @import "src/styles/colors.scss";
 @import "src/styles/typography.scss";
 
-.services-container {
+.services {
+  @media #{$mq-xl} {
+  }
   @media #{$mq-md} {
     padding: 5rem 0;
-    margin-top: 0vh;
+    margin: 2rem $margin-lg;
   }
   @media #{$mq-lg} {
     padding: 2rem 0;
@@ -13,43 +15,46 @@
   flex-direction: column;
   display: flex;
   justify-content: left;
-  margin-top: 5vh;
-  overflow-x: hidden;
-}
+  margin: 0 $margin-sm 0 $margin-sm;
 
-.contentWrapper {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 100%;
-}
-
-.services-container .headerTextWrapper {
-  @media #{$mq-sm} {
-    align-items: flex-start;
-    padding: 3rem 0 1rem 0;
-  }
-  @media #{$mq-lg} {
-    padding: 5rem 0 2rem 0
-  }
-  display: flex;
-  flex-direction: column;
-  margin: 5vh 0 0 0;
-
-  h4 {
+  &--header {
     @media #{$mq-md} {
-      width: 40%;
+      padding: 2rem 0;
+      margin-top: 0vh;
     }
-    width: 90%;
+    @media #{$mq-lg} {
+      padding: 2rem 0;
+    }
+    flex-direction: column;
+    display: flex;
+    justify-content: left;
+    margin-top: 5vh;
+    overflow-x: hidden;
+
+    .headerTextWrapper {
+      @media #{$mq-sm} {
+        align-items: flex-start;
+      }
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0;
+    
+      h4 {
+        @media #{$mq-md} {
+          width: 50%;
+        }
+        width: 90%;
+      }
+
+      .titleText {
+        @extend %h1-reg;
+        text-align: left;
+        margin: auto 0 0.25rem 0;
+        color: $black;
+      }
   }
-}
-
-.titleText {
-  @extend %h1-reg;
-  text-align: left;
-  margin: auto 0 0.25rem 0;
-  color: $black;
-
+  
+  }
 }
 
 .service-container {
@@ -58,9 +63,11 @@
   }
   @media #{$mq-lg} {
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 4rem;
   };
+  margin-top: 8rem;
   display: grid;
-  grid-template-columns: minmax(1fr);
+  grid-template-columns: 1fr;
 }
 
 .service {

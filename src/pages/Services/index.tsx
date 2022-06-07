@@ -3,12 +3,11 @@ import './index.scss';
 
 export const Services: React.FC = () => {
   return (
-    <div className='services-container'>
-      <section className='contentWrapper'>
+    <article className='services'>
+      <div className='services--header'>
         <header className='headerTextWrapper'>
           <h1 className='titleText'>Services</h1>
           <h4>ChainSafe offers clients best-in-class engineering, consulting, and auditing services for Web3.</h4>
-        <div className='rule'></div>
         </header>
         <div className='service-container'>
           <div className='service'>
@@ -24,7 +23,7 @@ export const Services: React.FC = () => {
             <a href="/"><h1>Solidity Audits</h1></a>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </article>
   )
 }

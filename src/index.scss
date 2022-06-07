@@ -15,7 +15,7 @@ body {
     margin: 0 $margin-lg;
   }
   @media #{$mq-xl} {
-    max-width: 70%;
+    max-width: 80%;
     left: 40%;
     position: relative;
     transform: translateX(-50%);

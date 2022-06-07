@@ -20,7 +20,7 @@ body {
 }
 @media (min-width: 90rem) {
   body {
-    max-width: 70%;
+    max-width: 80%;
     left: 50%;
     position: relative;
     transform: translateX(-50%);

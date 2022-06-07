@@ -29,7 +29,7 @@ $font-family: Neue Montreal, Arial, sans-serif;
 }
 
 %body {
-  @include font-style(1.125rem, 1.65rem);
+  @include font-style(1.25rem, 1.75rem);
   letter-spacing: 0.02em;
 }
 
