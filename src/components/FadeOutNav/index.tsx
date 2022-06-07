@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { motion, useViewportScroll } from 'framer-motion';
-import { navbarVariants, bgVariants, menuVariants, opacityVariants, colorVariants, menuItemVariants } from './animationVariants';
+import { navbarVariants, bgVariants, menuVariants, opacityVariants, menuItemVariants } from './animationVariants';
 import { NavLink } from 'react-router-dom';
 import { MenuToggle } from '../Header/MenuToggle';
 
@@ -78,6 +78,7 @@ export const FadeOutNav = (props: Props) => {
                 </NavLink> 
               ))}
             </ul>
+          <MenuToggle toggle={() => toggleOpen(!isOpen)} />
           </motion.div>
         </motion.div>
         {isOpen && (
@@ -93,14 +94,10 @@ export const FadeOutNav = (props: Props) => {
                     </motion.li>
                   ))}
                 </div>
-                <motion.div variants={colorVariants}>
-                  <MenuToggle toggle={() => toggleOpen(!isOpen)} />
-                </motion.div>
               </>
             ))}
           </motion.div>
         )}
-        <MenuToggle toggle={() => toggleOpen(!isOpen)} />
       </motion.nav>
     </>
   )

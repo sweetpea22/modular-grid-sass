@@ -11,7 +11,7 @@ export const navbarVariants = {
 
 export const bgVariants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 1200px 20px)`,
+    clipPath: `circle(${height * 2 + 200}px at 1300px 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -19,7 +19,7 @@ export const bgVariants = {
     }
   }),
   closed: {
-    clipPath: "circle(0px at 1200px 20px)",
+    clipPath: "circle(0px at 1300px 40px)",
     transition: {
       type: "spring",
       stiffness: 40,
@@ -69,22 +69,6 @@ export const menuItemVariants = {
   },
   open: {
     y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: 20}
-    }
-  }
-}
-
-export const colorVariants = {
-  closed: {
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000}
-    }
-  },
-  open: {
-    background: "yellow",
     opacity: 1,
     transition: {
       y: { stiffness: 1000, velocity: 20}
