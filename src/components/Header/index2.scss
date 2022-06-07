@@ -8,10 +8,7 @@
   padding: none;
   cursor: pointer;
   border: none;
-  left: 0;
-  top: 0;
+  right: 0;
+  top: 1rem;
   position: absolute;
-  &:hover {
-    background: $gray-900;
-  }
 }

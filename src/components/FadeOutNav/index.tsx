@@ -19,9 +19,9 @@ const menu = [
     title: 'Services',
     to: '/services',
     options: [
+      { title: 'Engineering', to: 'consulting', desc: 'Hire world-class blockchain engineering teams.' },
+      { title: 'Solutions', to: 'research', desc: 'Hire research and software designers.' },
       { title: 'Audits', to: '/services', desc: 'Request a smart contract audit.' },
-      { title: 'Consulting', to: 'consulting', desc: 'Hire ChainSafe for engineering.' },
-      { title: 'Research', to: 'research', desc: 'Hire ChainSafe for research.' },
     ],
   },
   {
@@ -65,18 +65,22 @@ export const FadeOutNav = (props: Props) => {
         variants={navbarVariants}
         animate={hidden ? "hidden" : "visible"}
         transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }} >
-        <span className='brand-container'>
-          <img src='/logo192.png' alt=""/>
-          <h4>ChainSafe</h4>
-        </span>
-        <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
-        <motion.div className='bg' variants={bgVariants}></motion.div>
-        <ul className='navbar__menu' >
-          {menu.map(({title}) => (
-            <li onClick={() => toggleOpen(!isOpen)} className='menu-item' key={title}>{title}
-            </li> 
-          ))}
-        </ul>
+        <motion.div className='navbar--left' variants={navbarVariants}>
+          <span className='brand-container'>
+            <img src='/logo192.png' alt=""/>
+            <h4>ChainSafe</h4>
+          </span>
+          <motion.div animate={isOpen ? "open" : "closed"} initial="closed" className='navbar__container'>
+            <motion.div className='bg' variants={bgVariants}></motion.div>
+            <ul className='navbar__menu' >
+              {menu.map(({title, to}) => (
+                <NavLink to={to} className='menu-item' key={title}>{title}
+                </NavLink> 
+              ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+        <MenuToggle toggle={() => toggleOpen(!isOpen)} />
         {isOpen && (
           <motion.div className='submenu' variants={menuVariants}>
             {menu.map(({title, to, options}) => (
@@ -95,8 +99,6 @@ export const FadeOutNav = (props: Props) => {
             ))}
           </motion.div>
         )}
-        </motion.div>
-        {/* <MenuToggle toggle={() => toggleOpen(!isOpen)} /> */}
       </motion.nav>
     </>
   )
