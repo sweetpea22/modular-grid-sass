@@ -61,7 +61,7 @@ export const FadeOutNav = (props: Props) => {
 
   return (
     <>
-      <motion.nav 
+      <motion.nav  
         className='navbar'
         variants={navbarVariants}
         animate={hidden ? "hidden" : "visible"}
@@ -83,7 +83,7 @@ export const FadeOutNav = (props: Props) => {
           </motion.div>
         </motion.div>
         {isOpen && (
-          <motion.div className='submenu' animate={isOpen ? "open" : "closed"} initial="closed"  variants={menuVariants}>
+          <motion.div className='submenu bg' animate={isOpen ? "open" : "closed"} initial="closed"  variants={menuVariants}>
             <div className='submenu--section submenu--section__top'>
               {menu.map(({title, to, options}, index) => (
                 (to && index <= 1) && (
