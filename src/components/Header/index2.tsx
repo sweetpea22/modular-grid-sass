@@ -68,10 +68,10 @@ const Header3 = (props: Props) => {
   return (
     <>
     <nav className='header-navigation' >
-      <span className='brand-container'>
+      <div className='brand-container'>
         <img src='/logo192.png' alt=""/>
         <h4>ChainSafe</h4>
-      </span>
+      </div>
       <ul className='header-navigation__menu header-navigation--big-screen'>
         {menu.map(({title, options}) => (
           <li className='menu-item' onClick={() => toggleOpen()} key={title}>
