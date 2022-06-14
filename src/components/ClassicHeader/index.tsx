@@ -1,41 +1,92 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
 import { motion, useViewportScroll } from 'framer-motion';
-import { navbarVariants, bgVariants, menuVariants, opacityVariants, menuItemVariants } from './animationVariants';
 import { NavLink } from 'react-router-dom';
-import { MenuToggle } from '../Header/MenuToggle';
-import { MobileNav } from './MobileNav';
+import './mobilenav.scss';
 
-const menu = [
+
+
+const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 1200px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2
+    }
+  }),
+  closed: {
+    clipPath: "circle(0px at 1200px 40px)",
+    transition: {
+      delay: 0.25,
+      type: "spring",
+      stiffness: 300,
+      restDelta: 5,
+      damping: 40,
+    }
+  },
+};
+
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.14, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
+};
+
+const staggerSelf = {
+  open: {
+    opacity: 1,
+    transition: {
+      y: { stiffness: 40, velocity: 50}
+    }
+  },
+  closed: {
+    opacity: 0,
+    transition: {
+      y: { stiffness: 40, velocity: 50 }
+    }
+  }
+};
+
+export interface NavLink {
+  id?: number;
+  name: string;
+  linkUrl: string;
+  description?: string;
+}
+
+
+const navlinks: NavLink[] = [
   {
-    title: 'Products',
-    to: '/products',
-    options: [
-      { title: 'Storage', to: 'web3', desc: 'Integrate decentralized storage in seconds.' },
-      { title: 'Files', to: 'cg', desc: 'Encrypted storage on Filecoin.'  },
-      { title: 'ChainBridge', to: 'lodestar', desc: 'Cross-chain interop made easy.' },
-    ],
+    id: 1,
+    name: "Docs",
+    linkUrl: "https://web3js.readthedocs.io/en/v1.5.2/",
+    description: "velit esse cillum dolore eu fugiat nulla pariatur."
+
   },
   {
-    title: 'Services',
-    to: '/services',
-    options: [
-      { title: 'Engineering', to: 'consulting', desc: 'Hire world-class blockchain engineering teams.' },
-      { title: 'Solutions', to: 'research', desc: 'Hire research and software designers.' },
-      { title: 'Audits', to: '/services', desc: 'Request a smart contract audit.' },
-    ],
+    id: 3,
+    name: "Join Discord",
+    linkUrl: "https://discord.com/invite/xSAwrnCWcg",
+    description: "quis nostrum exercitationem ullam corporis suscipi."
   },
   {
-    title: 'Company',
-    to: '/about',
-    options: [
-      { title: 'About', to: '/about', desc: 'Company history and values' },
-      { title: 'Events', to: 'brand', desc: 'Meet us in-person or virtually.' },
-      { title: 'Media', to: 'press', desc: 'Resources and Press.' },
-      { title: 'Careers', to: 'careers', desc: 'Work on the frontier with friendly people.' },
-    ],
+    id: 4,
+    name: "Blog",
+    linkUrl: "https://medium.com/chainsafe-systems",
+    description: "Quis autem vel eum iure reprehenderit"
   },
-];
+  {
+    id: 5,
+    name: "GitHub",
+    linkUrl: "https://github.com/chainsafe/web3.js",
+    description: "expound the actual teachings of the great explorer of the truth",
+  },
+]
+
 
 
 type Props = {}
@@ -66,12 +117,34 @@ export const ClassicHeader = (props: Props) => {
         <h4>Sygma</h4>
       </div>
       <div className='menu-toggle'>
+      <motion.nav
+        initial={false}
+        className='mobile-menu'
+        animate={isOpen ? "open" : "closed"}
+      >
+        <motion.div className='background' variants={sidebar} />
+          <motion.ul 
+            variants={variants}
+            className='navMenu'>
+          {navlinks.map(i => (
+            <motion.li
+              className={'navlink'}
+              variants={staggerSelf}
+              whileHover={{ x: -8}}
+              whileTap={{ scale: 0.93 }}
+            >
+              <a target="__blank" rel="noopener noreferrer" href={i.linkUrl} className='noUnderline'>{i.name}</a>
+              <motion.p
+              >{i.description}</motion.p>
+              </motion.li>
+          ))}
+        </motion.ul>
         <button className='button' onClick={() => toggleOpen(!isOpen)}>
           <svg width="26" height="26" viewBox="0 0 27 22" fill="none" strokeWidth={1.5}>
             <motion.path strokeWidth={1.5} stroke="#000" d="M 2 2.5 L 24 2.5"
             variants={{
-                closed: { d: "M 2 2.5 L 20 2.5" },
-                open: { d: "M 3 16.5 L 17 2.5" }
+                closed: { d: "M 2 2.5 L 24 2.5" },
+                open: { d: "M 3 16.5 L 22 1" }
               }}
             />
             <motion.path
@@ -85,13 +158,15 @@ export const ClassicHeader = (props: Props) => {
             />
             <motion.path strokeWidth={1.5} stroke="#000" d="M 2 16.346 L 24 16.346"
               variants={{
-                closed: { d: "M 2 16.346 L 20 16.346" },
-                open: { d: "M 3 2.5 L 17 16.346" }
+                closed: { d: "M 2 16.346 L 24 16.346" },
+                open: { d: "M 3 1 L 22 16.346" }
               }}
             />
           </svg>
         </button>
+      </motion.nav>
       </div>
+
 
     </nav>
   )
