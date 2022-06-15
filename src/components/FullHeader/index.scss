@@ -1,0 +1,70 @@
+@import "src/styles/breakpoints.scss";
+@import "src/styles/colors.scss";
+@import "src/styles/typography.scss";
+
+.fullheader {
+  @media #{$mq-lg} {
+    justify-content: flex-start;
+    padding: 0 2rem;
+  }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  height: 40px;
+  padding-left: 1rem;
+  top: .75rem;
+
+  &--menu {
+    display: flex;
+    justify-content: space-evenly;
+
+    .menu-item {
+      text-decoration: none;
+      color: $black;
+      margin-right: 1.25rem;
+
+      &:hover {
+        color: gray;
+        transition: 0.2s ease-in;
+      }
+    }
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+    h4 {
+      @extend %body;
+      margin-left: .5rem;
+    }
+  }
+
+  .button {
+    @media #{$mq-md} {
+      right: 1rem;
+    }
+    right: .5rem;
+    display: flex;
+    position: relative;
+    z-index: 500;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 50%;
+    padding: .55rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.24s ease-out;
+    &:hover {
+      background: lightgray;
+    }
+  }
+}

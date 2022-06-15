@@ -1,11 +1,12 @@
 import React from 'react'
 import { FadeOutNav } from '../../components/FadeOutNav';
+import { FullHeader } from '../../components/FullHeader';
 import './index.scss';
 
 export const Solutions: React.FC = () => {
   return (
     <>
-      <FadeOutNav />
+      <FullHeader />
       <div className='solutions-container'>
       <section className='contentWrapper'>
         <div className='headerTextWrapper'>

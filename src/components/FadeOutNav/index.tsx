@@ -25,6 +25,16 @@ const menu = [
     ],
   },
   {
+    title: 'Public Goods',
+    to: '/about',
+    options: [
+      { title: 'About', to: '/about', desc: 'Company history and values' },
+      { title: 'Events', to: 'brand', desc: 'Meet us in-person or virtually.' },
+      { title: 'Media', to: 'press', desc: 'Resources and Press.' },
+      { title: 'Careers', to: 'careers', desc: 'Work on the frontier with friendly people.' },
+    ],
+  },
+  {
     title: 'Company',
     to: '/about',
     options: [
