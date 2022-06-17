@@ -58,21 +58,33 @@ export const ClassicFooter = () => {
               Audits
             </NavLink>
           </div>
+          <div className='footer-column'>
+            <NavLink to="/company" className='footer-column--header'>
+              Company
+            </NavLink>
+            <NavLink to="/solutions" className='footer-column--link'>
+              About
+            </NavLink>
+            <NavLink to="/engineering" className='footer-column--link'>
+              Careers
+            </NavLink>
+            <NavLink to="/audits" className='footer-column--link'>
+              Events
+            </NavLink>
+          </div>
         </div>
         <div className='footer--upper--right'>
-          <p>The leading team of trustless systems engineering.</p>
           <button>Contact ChainSafe</button>
           <div className='icons'>
-            <DiscordLogo />
-            <YoutubeLogo />
-            <TwitterLogo />
-            <GithubLogo /> 
-            <LinkedinLogo /> 
-            <MediumLogo />
+            <a href='/'><DiscordLogo size={32} /></a>
+            <a href='/'><YoutubeLogo size={32} /></a>
+            <a href='/'><GithubLogo size={32} /></a>
+            <a href='/'><TwitterLogo size={32} /></a>
+            <a href='/'><MediumLogo size={32} /></a>
           </div>
         </div>
       </div>
-      <hr className='rule' />
+      <div className='rule'></div>
       <div className='footer--lower'>
         <div className='bottom-left'>
           <p className='bottom-link'>
