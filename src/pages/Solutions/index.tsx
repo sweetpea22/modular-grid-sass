@@ -2,6 +2,7 @@ import React from 'react'
 import { FadeOutNav } from '../../components/FadeOutNav';
 import { FullHeader } from '../../components/FullHeader';
 import './index.scss';
+import { ClassicFooter } from '../../components/Footer';
 
 export const Solutions: React.FC = () => {
   return (
@@ -79,6 +80,7 @@ export const Solutions: React.FC = () => {
         </div>
       </section>
       </div>
+      <ClassicFooter />
     </>
   )
 }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import './mobilenav.scss';
 import { IViewportSize, useViewportSize } from './use-viewport-size';
+import asset from './asset.svg';
 
 
 const sidebar = {
@@ -112,7 +113,7 @@ export const FullHeader = () => {
   return (
     <nav className='fullheader'>
       <div className='brand'>
-        <img src="/logo192.png" alt="" />
+        <img src={asset} alt="" />
         <h4>ChainSafe</h4>
       </div>
       {(viewportSize.width && viewportSize.width > 930) && (

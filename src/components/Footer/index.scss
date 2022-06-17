@@ -1,0 +1,56 @@
+@import "src/styles/breakpoints.scss";
+@import "src/styles/colors.scss";
+@import "src/styles/typography.scss";
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: 5vh;
+  background: $black;
+  display: flex;
+  flex-direction: column;
+
+  &--upper, &--lower {
+    @media #{$mq-md} {
+      flex-direction: row;
+      align-items: center;
+    }
+    @media #{$mq-lg} {
+      justify-content: space-between;
+    }
+    display: flex;
+
+    &--left {
+      display: flex;
+      width: 80%;
+    }
+  }
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2.5rem;
+  a {
+    @extend %body;
+    font-size: 18px;
+    color: $gray-100;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+    &:hover {
+      color: yellow;
+    }
+  }
+  &--header {
+    margin-bottom: .25rem;
+  }
+}
+
+.footer--upper--right {
+  p {
+    @extend %body;
+    color: $gray-200;
+    text-align: right;
+  }
+}
