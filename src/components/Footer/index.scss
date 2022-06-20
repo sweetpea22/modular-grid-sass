@@ -3,6 +3,9 @@
 @import "src/styles/typography.scss";
 
 .footer {
+  @media #{$mq-xl} {
+    width: 99vw;
+  }
   width: 100%;
   position: relative;
   bottom: 0;
@@ -11,23 +14,31 @@
   display: flex;
   flex-direction: column;
 
-  &--upper, &--lower {
+  &--upper {
     @media #{$mq-md} {
       flex-direction: row;
-      align-items: center;
     }
     @media #{$mq-lg} {
       justify-content: space-between;
     }
-    display: flex;
 
+    align-items: center;
+    display: flex;
+    
     &--left {
       display: flex;
       width: 80%;
     }
   }
   &--lower {
-    // height: 2rem;
+    @media #{$mq-md} {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    display: flex;
+    height: 3rem;
+    justify-content: flex-start;
   }
 }
 
@@ -76,6 +87,7 @@
     &:hover, &:active {
       cursor: pointer;
       background: $gray-900;
+      color: $gray-100;
     }
   }
   .icons {
@@ -98,4 +110,28 @@
   align-self: center;
   height: 1px;
   margin: 0;
+}
+
+.footer .bottom-left {
+  display: flex;
+  position: relative;
+  left: 1rem;
+}
+.footer .bottom-right {
+  @media #{$mq-md} {
+    right: 1rem;
+  }
+  margin-left: 2rem;
+  display: flex;
+  position: relative;
+}
+
+.footer .bottom-link {
+  @media #{$mq-md} {
+    margin: 0 .5rem;
+  }
+  @extend %caption;
+  color: $gray-600;
+  text-decoration: none;
+  margin: .5rem;
 }
