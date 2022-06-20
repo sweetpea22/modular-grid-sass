@@ -17,17 +17,24 @@
   &--upper {
     @media #{$mq-md} {
       flex-direction: row;
+      align-items: center;
     }
     @media #{$mq-lg} {
       justify-content: space-between;
     }
-
-    align-items: center;
+    flex-direction: column;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     
     &--left {
-      display: flex;
-      width: 80%;
+      @media #{$mq-md} {
+        width: 80%;
+        display: flex;
+      }
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   &--lower {
@@ -35,9 +42,10 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      height: 3rem;
     }
     display: flex;
-    height: 3rem;
+    height: auto;
     justify-content: flex-start;
   }
 }
@@ -53,7 +61,7 @@
     text-decoration: none;
     transition: all 0.2s ease-in;
     &:hover {
-      color: yellow;
+      color: $gray-800;
     }
   }
   &--header {
@@ -64,8 +72,11 @@
 .footer--upper--right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-right: 1rem;
+  @media #{$mq-md} {
+    margin-right: 1rem;    
+    align-items: flex-end;
+  }
+  margin: 0 0 1rem 2rem;
   p {
     @extend %body;
     color: $gray-200;
@@ -106,7 +117,7 @@
 
 .footer .rule {
   background: $gray-800;
-  width: 99%;
+  width: 97%;
   align-self: center;
   height: 1px;
   margin: 0;
@@ -134,4 +145,8 @@
   color: $gray-600;
   text-decoration: none;
   margin: .5rem;
+  transition: all .4s ease-in;
+  &:hover {
+    color: yellow;
+  }
 }

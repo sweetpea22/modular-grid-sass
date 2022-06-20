@@ -99,10 +99,10 @@ export const ClassicFooter = () => {
         </div>
         <div className='bottom-right'>
           <NavLink className='bottom-link' to="/terms">
-            Terms of Service
+            Terms
           </NavLink>
           <NavLink className='bottom-link' to="/privacy-policy">
-            Privacy Policy
+            Privacy
           </NavLink>
         </div>
       </div>
