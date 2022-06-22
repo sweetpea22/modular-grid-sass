@@ -1,0 +1,44 @@
+@import "src/styles/breakpoints.scss";
+@import "src/styles/colors.scss";
+@import "src/styles/typography.scss";
+
+.company {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+
+  &--container {
+    margin: 0 2rem;
+  }
+}
+
+.company-items {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: .5rem;
+
+  .item {
+    padding: 4rem 1.5rem;
+    border-radius: 2rem;
+    background: $gray-300;
+
+    button {
+      @extend %caption;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      background: $black;
+      color: $gray-100;
+      border-radius: 8px;
+      padding: .6rem 1rem;
+      box-shadow: none;
+      border: 1px solid $gray-900;
+      transition: all 0.15s ease-in-out; 
+      margin-top: 1rem;
+      &:hover, &:active {
+        cursor: pointer;
+        background: $gray-900;
+      }
+      }
+  }
+}
